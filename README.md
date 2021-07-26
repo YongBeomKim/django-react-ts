@@ -55,6 +55,6 @@ react-testing-library/intro)
 ---
 
 <p align="center">
-  <img alt="django-react-typescript logo" src="assets/Logo.png" />
+  <img alt="django-react-typescript logo" src="./Logo.png" />
   <p align="center">Simplified TS React-Django boilerplate.</p>
 </p>
