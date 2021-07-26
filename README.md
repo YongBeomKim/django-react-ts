@@ -2,6 +2,13 @@
 ![Build and Test app](https://github.com/marcelovicentegc/django-react-typescript/workflows/Build%20and%20Test%20app/badge.svg)
 
 
+```r
+$ yarn tcm src/
+Wrote static/src/App.css.d.ts
+Wrote static/src/index.css.d.ts
+Done in 0.21s.
+```
+
 ## References
 
 ### React.js

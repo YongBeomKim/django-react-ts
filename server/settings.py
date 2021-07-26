@@ -10,7 +10,7 @@ DATABASES = {
     "default": DB_HOSTS['sqlite3']
 }
 # Enviorment texts
-REACT_DEV_URL = "http://localhost:3000/dist/"
+REACT_DEV_URL = "http://localhost:3000/"
 REACT_HOST_URL = "static/dist/"
 SIMPLE_JWT['SIGNING_KEY'] = SECRET_KEY
 
@@ -23,4 +23,8 @@ if DEBUG:
     INSTALLED_APPS += ['corsheaders', "debug_toolbar"]
     MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
     INTERNAL_IPS = "127.0.0.1"
-    CORS_ORIGIN_ALLOW_ALL = True
+    CORS_ORIGIN_WHITELIST = [
+        'http://localhost:3000',
+        'https://localhost:3000',
+        'http://127.0.0.1:8000',
+    ]

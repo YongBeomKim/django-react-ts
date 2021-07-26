@@ -14,7 +14,7 @@ module.exports = env => {
       index: path.join(__dirname, 'src', 'index.tsx'),
     },
     output: {
-      filename: 'dist/[name].js',
+      filename: '[name].js',
       path: path.resolve(__dirname, 'dist'),
     },
     resolve: {
@@ -25,11 +25,17 @@ module.exports = env => {
       hot: true,
       overlay: true,
       disableHostCheck: true,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+      }
     },
     plugins: [
       new Dotenv(),
       new CleanWebpackPlugin(),
     ],
+
     module: {
       rules: [
         {
@@ -44,6 +50,16 @@ module.exports = env => {
           },
         },
 
+        // {
+        //   test: /\.css$/i,
+        //   use: ["style-loader", "css-loader"],
+        // },
+
+        {
+          test: [/\.css$/, /\.s[ac]ss$/i],
+          use: ['style-loader', 'css-loader', 'sass-loader'],
+        },
+        
       ],
     },
   }

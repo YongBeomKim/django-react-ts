@@ -1,8 +1,12 @@
-export const app: string;
-export const btnDel: string;
-export const header: string;
-export const inputArea: string;
-export const link: string;
-export const listDay: string;
-export const menu: string;
-export const off: string;
+declare const styles: {
+  readonly "App": string;
+  readonly "header": string;
+  readonly "menu": string;
+  readonly "link": string;
+  readonly "list_day": string;
+  readonly "off": string;
+  readonly "btn_del": string;
+  readonly "input_area": string;
+};
+export = styles;
+
