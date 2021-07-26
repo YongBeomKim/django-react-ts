@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load react %}
+
+
+{% block style %}
+<title>Logo</title>
+{% endblock style %}
+
+
+{% block content %}
+<div id="main">
+  <!-- React load here -->
+  <div id="root" />
+</div>
+{% endblock content %}
+
+
+{% block footer %}
+{% endblock footer %}
+
+
+{% block js %}
+<script src='{% react "index.js" %}'></script>
+{% endblock js %}
+
+
+<!-- -
+static :
+media :
+restful api :
+-->>

@@ -1,0 +1,17 @@
+# https://suyeon96.tistory.com/33
+
+[*.{html, css}]
+indent_style = space
+indent_size = 2
+
+[*.{js,jsx,json,ts,tsx}]
+indent_style = space
+indent_size = 2
+
+[*.{scss,sass}]
+indent_style = space
+indent_size = 2
+
+[.babelrc]
+indent_style = space
+indent_size = 2
