@@ -64,7 +64,7 @@ react-testing-library/intro)
 ---
 
 <h1 align="center" style="margin-top:100px">
-<img src="https://image.pngaaa.com/339/4169339-middle.png" width="100" height="100%" display="inline">
+<img src="https://files.realpython.com/media/django-pony.c61d43c33ab3.png" width="100" height="100%" display="inline">
 <img src="https://user-images.githubusercontent.com/24482512/104732205-f043b700-574d-11eb-84fe-3842f9f26530.png" width="100" height="100%" display="inline">
 <img src="https://user-images.githubusercontent.com/24482512/104730908-f173e480-574b-11eb-8c4d-4b3398fc8e2b.png" width="100" height="100%" display="inline">
 <img src="https://user-images.githubusercontent.com/24482512/104730913-f2a51180-574b-11eb-83e5-734e21526429.png" width="100" height="100%" display="inline">
