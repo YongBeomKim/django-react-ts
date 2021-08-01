@@ -11,6 +11,11 @@ Done in 0.21s.
 
 ## References
 
+### Gits
+- [react-redux-typescript-webpack-starter-kit](https://github.com/yunusunver/react-redux-typescript-webpack-starter-kit)
+- [minimal-react-webpack-babel-eslint-prettier-setup](https://github.com/junagao/minimal-react-webpack-babel-eslint-prettier-setup)
+- [django-react-typescript](https://github.com/marcelovicentegc/django-react-typescript)
+
 ### React.js
 - [CSS Module for React](https://react.vlpt.us/styling/02-css-module.html)
 - [React Styled Components](https://styled-components.com/docs/basics)
@@ -38,9 +43,6 @@ Done in 0.21s.
 - [Example of Deploying of HEROKU for YouTube](https://youtu.be/kBwhtEIXGII)
 - [Heroku Fixing the Static Errors](https://stackoverflow.com/questions/29082028/heroku-django-oserror-errno-2-no-such-file-or-directory-static-static)
 
-### Github
-- [django-react-typescript](https://github.com/marcelovicentegc/django-react-typescript)
-
 
 ## Settings
 
@@ -61,7 +63,9 @@ react-testing-library/intro)
 
 ---
 
-<p align="center">
-  <img alt="django-react-typescript logo" src="./Logo.png" />
-  <p align="center">Simplified TS React-Django boilerplate.</p>
-</p>
+<h1 align="center" style="margin-top:100px">
+<img src="https://image.pngaaa.com/339/4169339-middle.png" width="100" height="100%" display="inline">
+<img src="https://user-images.githubusercontent.com/24482512/104732205-f043b700-574d-11eb-84fe-3842f9f26530.png" width="100" height="100%" display="inline">
+<img src="https://user-images.githubusercontent.com/24482512/104730908-f173e480-574b-11eb-8c4d-4b3398fc8e2b.png" width="100" height="100%" display="inline">
+<img src="https://user-images.githubusercontent.com/24482512/104730913-f2a51180-574b-11eb-83e5-734e21526429.png" width="100" height="100%" display="inline">
+</h1>
