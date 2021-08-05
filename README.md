@@ -16,6 +16,9 @@ Done in 0.21s.
 - [minimal-react-webpack-babel-eslint-prettier-setup](https://github.com/junagao/minimal-react-webpack-babel-eslint-prettier-setup)
 - [django-react-typescript](https://github.com/marcelovicentegc/django-react-typescript)
 
+### Babel
+- [Async 사용시 regeneratorRuntime is not defined](https://velog.io/@haebin/React-regeneratorRuntime-is-not-defined-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0)
+
 ### React.js
 - [CSS Module for React](https://react.vlpt.us/styling/02-css-module.html)
 - [React Styled Components](https://styled-components.com/docs/basics)

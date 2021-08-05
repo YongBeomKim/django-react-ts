@@ -47,6 +47,10 @@ module.exports = env => {
               require.resolve("@babel/preset-react"),
               require.resolve("@babel/preset-typescript"),
             ],
+            plugins: [
+              "@babel/plugin-proposal-class-properties",
+              "@babel/plugin-transform-runtime"
+            ],
           },
         },
 
