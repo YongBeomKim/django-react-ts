@@ -13,6 +13,7 @@ Done in 0.21s.
 
 ### vscode
 - [React JSX VS CODE Settings](https://velog.io/@hotdari90/VS-CODE-Settings)
+- [Visual Studio Code에서의 TypeScript 개발 환경 구축](https://poiemaweb.com/typescript-vscode)
 
 ### Gits
 - [react-redux-typescript-webpack-starter-kit](https://github.com/yunusunver/react-redux-typescript-webpack-starter-kit)
