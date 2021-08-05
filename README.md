@@ -11,6 +11,9 @@ Done in 0.21s.
 
 ## References
 
+### vscode
+- [React JSX VS CODE Settings](https://velog.io/@hotdari90/VS-CODE-Settings)
+
 ### Gits
 - [react-redux-typescript-webpack-starter-kit](https://github.com/yunusunver/react-redux-typescript-webpack-starter-kit)
 - [minimal-react-webpack-babel-eslint-prettier-setup](https://github.com/junagao/minimal-react-webpack-babel-eslint-prettier-setup)
@@ -32,14 +35,14 @@ Done in 0.21s.
 - [Typescript: Cannot find module 'react'](https://stackoverflow.com/questions/40899868/typescript-cannot-find-module-react)
 - [GITHUB Django Typescript Boilerplate](https://github.com/marcelovicentegc/django-react-typescript)
 
-## Django Restful Framework
+### Django Restful Framework
 - [Routers App Names](https://www.django-rest-framework.org/api-guide/routers/#routers)
 - [DRF 에서 App Name 사용시 주의할 점](https://devlog.jwgo.kr/2019/11/08/how-to-set-default-url-field-when-using-appname-in-drf/)
 - [DRF using view name 'user-detail'](https://stackoverflow.com/questions/20550598/django-rest-framework-could-not-resolve-url-for-hyperlinked-relationship-using)
 - [Simple JWT Authentication](https://blog.viralsangani.me/django-rest-framework-and-jwt-authentication/)
 - [Simple JWT with INSOMNIA](https://velog.io/@hyeon4137/React-DRF-API%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-velog-%EB%94%B0%EB%9D%BC-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EA%B8%B0-4%EC%9E%A5)
 
-## Static Folders
+### Static Folders
 - [Static Customizing the ignored pattern list](https://runebook.dev/ko/docs/django/ref/contrib/staticfiles)
 - [Static folder Customize](https://itinerant.tistory.com/144)
 - [Static Customizing Ignored Patten](https://stackoverflow.com/questions/57921970/example-for-customizing-the-ignored-pattern-list-in-djangos-collectstatic)
