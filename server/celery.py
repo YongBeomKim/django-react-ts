@@ -20,12 +20,12 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 # Celery Periodic Tasks
 # https://docs.celeryproject.org/en/stable/userguide/periodic-tasks.html#entries
 app.conf.beat_schedule = {
-    # 'add-every-5-seconds': {
-    #     'task': 'notifications.tasks.send_email',
-    #     # 'schedule': crontab(minute='*/1'),
-    #     'schedule': 5,
-    #     'args': ('django@python.com','This is the sample.'),
-    # },
+    'add-every-5-seconds': {
+        'task': 'stockdata.tasks.send_email',
+        # 'schedule': crontab(minute='*/1'),
+        'schedule': 5,
+        'args': ('django@python.com','This is the sample.'),
+    },
 }
 
 # Load task modules Django apps.

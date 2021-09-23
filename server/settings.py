@@ -15,8 +15,9 @@ REACT_HOST_URL = "static/dist/"
 SIMPLE_JWT['SIGNING_KEY'] = SECRET_KEY
 
 # Application definition
-# INSTALLED_APPS += [
-# ]
+INSTALLED_APPS += [
+    'stockdata',
+]
 
 if DEBUG:
     # https://django-debug-toolbar.readthedocs.io/en/latest/installation.html

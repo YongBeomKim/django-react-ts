@@ -11,6 +11,11 @@ $ sudo apt install redis-server
 $ redis-server --version
 $ sudo nvim /etc/redis/redis.conf
 $ sudo systemctl restart redis-server.service
+
+# Celery Cache Purge & Start
+$ celery -A server purge
+$ celery -A server worker -l info
+$ celery -A server beat
 ```
 
 ### Django Restful Framework
