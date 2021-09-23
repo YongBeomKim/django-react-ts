@@ -8,3 +8,10 @@ djangorestframework-simplejwt>=4.7.2
 gunicorn>=20.1.0
 psycopg2>=2.9.1
 pylint>=2.9.5
+
+redis
+celery>=4.4.6
+django-celery-beat>=2.0.0
+django-celery-results>=1.2.1
+ipython>=7.16.1 # Run django shell in interactive shell
+flower>=0.9.5

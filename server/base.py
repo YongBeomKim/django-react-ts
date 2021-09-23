@@ -69,6 +69,9 @@ INSTALLED_APPS = [
     "django_extensions",
     "rest_framework",
     'rest_framework_simplejwt',
+    # Celery Crontab
+    'django_celery_results',
+    'django_celery_beat',
 ]
 
 
@@ -130,7 +133,12 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Seoul'
 USE_I18N = True
+USE_L10N = True
 USE_TZ = False
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -144,6 +152,29 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.joinpath("media")
 
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Celery Configuration Options
+# The CELERY_ namespace is also optional, but recommended 
+# (to prevent overlap with other Django settings)
+# https://docs.celeryproject.org/en/stable/userguide/configuration.html#std-setting-result_backend
+CELERY_TIMEZONE = "Asia/Seoul"
+# CELERY_BROKER_URL = "amqp://rabbit:celerydj@localhost:5672/rabbithost"
+CELERY_BROKER_URL = 'redis://localhost:6379'
+#CELERY_RESULT_BACKEND = 'rpc://localhost'
+#CELERY_TASK_TRACK_STARTED = True
+
+# Issues with mysql
+# https://github.com/celery/django-celery-results
+DJANGO_CELERY_RESULTS_TASK_ID_MAX_LENGTH=191
+
+# Configure Celery to use the django-celery-results backend.
+# https://docs.celeryproject.org/en/latest/django/first-steps-with-django.html#django-celery-results-using-the-django-orm-cache-as-a-result-backend
+CELERY_RESULT_BACKEND = 'django-db'
+# celery setting.
+CELERY_CACHE_BACKEND = 'django-cache'
+# django setting.
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+#         'LOCATION': 'my_cache_table',
+#     }
+# }
