@@ -1,14 +1,12 @@
 from .base import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-a2@bz#xcoo4&l6kfwnnrcdnu-6009u%cgs7ns254220gfuv5(h'
-
-
 DEBUG = True
 ALLOWED_HOSTS = []
 DATABASES = {
-    "default": DB_HOSTS['sqlite3']
+    "default": DB_HOSTS['psql']
 }
+
 # Enviorment texts
 REACT_DEV_URL = "http://localhost:3000/"
 REACT_HOST_URL = "static/dist/"
@@ -16,7 +14,7 @@ SIMPLE_JWT['SIGNING_KEY'] = SECRET_KEY
 
 # Application definition
 INSTALLED_APPS += [
-    'stockdata',
+    'games',
 ]
 
 if DEBUG:

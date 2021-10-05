@@ -1,23 +1,26 @@
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# https://docs.python.org/ko/3/library/configparser.html
+import configparser
 from pathlib import Path
 from datetime import timedelta
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Setting Params from `settings.ini`
+config = configparser.ConfigParser(interpolation=None)
+config.read(BASE_DIR / 'settings.ini')
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+PSQL_KEY = 'PSQL'
+SECRET_KEY = config['DJANGO']['secret_key']
 DB_HOSTS = {
     'sqlite3': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-    "psql": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "",
-        "USER": "",
-        "PASSWORD": "",
-        "HOST": "",
-        "PORT": ""
+    "psql":{
+        key.upper(): config[PSQL_KEY][key]  
+        for key in config[PSQL_KEY]
     },
 }
 
@@ -106,25 +109,15 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'server.wsgi.application'
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
-
+WSGI_APPLICATION = 'server.wsgi.application'
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
 ]
 
 
