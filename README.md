@@ -39,6 +39,7 @@ $ celery -A server beat
 ## FrontEnd
 
 ### Initialized
+- [Webpack Error Overlay](https://www.npmjs.com/package/error-overlay-webpack-plugin)
 - [React](https://reactjs.org/)
 - [React Router](https://reactrouter.com/)
 - [Styled Components](https://styled-components.com/)
