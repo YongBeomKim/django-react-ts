@@ -9,12 +9,16 @@ from rest_framework_simplejwt.views import (
 )
 from .views import IndexView, json_api, json_api_day
 
+
+# React Site regex
+regex_url = r'react/\b(create_word|day|day/[0-9]+)\b/'
+
 # User Customized Urls
 urlpatterns = [
     path("api-word/", json_api),
     path("api-word/<int:pk>/", json_api_day),
     path('', IndexView.as_view(), name="home"),
-    re_path(r"\b(create_word|day|day/[0-9]+)\b/", IndexView.as_view()),
+    re_path(regex_url, IndexView.as_view()),
 ]
 
 # Admin & DRF Urls
