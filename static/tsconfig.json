@@ -1,16 +1,39 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "jsx": "react-jsx",
+    // "baseUrl": "src",
+    "outDir": "dist",
     "target": "es6",
     "module": "commonjs",
     "strict": true,
     "allowJs": true,
-    "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "jsx": "react-jsx"
+    "downlevelIteration": true,
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "tags": [
+          "styled",
+          "div",
+          "css",
+          "scss",
+          "sass",
+          "sty"
+        ],
+        "lint": {
+          "vendorPrefix": "error",
+          "zeroUnits": "ignore"
+        }
+      }
+    ],
+    "typeRoots": [
+      "src/@types",
+      "node_modules/@types"
+    ]
   },
   "include": [
     "src"
