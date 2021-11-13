@@ -55,7 +55,7 @@ react-testing-library/intro)
 - [Objects are not valid as a React child 해결](https://velog.io/@leemember/Objects-are-not-valid-as-a-React-child-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0)
 
 ### TypeScript
-- [React app typescript does not load d.ts file](https://stackoverflow.com/questions/54949876/create-react-app-typescript-does-not-load-d-ts-file)
+- [Add a new declaration (.d.ts) file](https://stackoverflow.com/questions/54949876/create-react-app-typescript-does-not-load-d-ts-file)
 - [typed-css-modules | yarn tcm](https://www.npmjs.com/package/typed-css-modules)
 - [typed-scss-modules | yarn tsm](https://www.npmjs.com/package/typed-scss-modules)
 - [React App using Webpack, Babel and TypeScript](https://dev.to/deadwing7x/setup-a-react-app-using-webpack-babel-and-typescript-5927)
