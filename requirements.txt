@@ -1,18 +1,19 @@
 wheel
 Django==3.2.10
-orjson>=3.6.4 
-django-ninja-auth>=0.1.5
-django-extensions>=3.1.3
-django-cors-headers>=3.7.0
-django-debug-toolbar>=3.2.1
+orjson>=3.6.5
+django-ninja-auth==0.1.5
+django-extensions==3.1.5
+django-cors-headers>=3.10.1
+django-debug-toolbar>=3.2.4
 gunicorn>=20.1.0
-uvicorn
-psycopg2>=2.9.1
-pylint>=2.9.5
+uvicorn>=0.16.0
+psycopg2>=2.9.3
+pylint==2.12.2
 
-redis
-celery>=4.4.6
-django-celery-beat>=2.0.0
-django-celery-results>=1.2.1
+redis>=4.1.0
+celery==5.2.3
+setuptools==59.6.0
+django-celery-beat==2.2.1
+django-celery-results==2.2.0
 ipython>=7.16.1 # Run django shell in interactive shell
-flower>=0.9.5
+flower==1.0.0
