@@ -4,14 +4,13 @@ from .logger import *
 # SECURITY WARNING: keep the secret key used in production secret!
 DEBUG = False
 ALLOWED_HOSTS = [
-    "3.34.63.174",
     "0.0.0.0",
     "127.0.0.1",
 ]
 
 # https://stackoverflow.com/questions/38841109/csrf-validation-does-not-work-on-django-using-https
 # https://docs.djangoproject.com/en/dev/releases/4.0/#format-change
-CSRF_TRUSTED_ORIGINS = ['http://3.34.63.174']
+CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0']
 FOLDER_NAME = "../media"
 DATABASES = {
     "default": DB_HOSTS['sqlite3'], # psql
