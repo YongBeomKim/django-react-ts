@@ -8,7 +8,9 @@ const GlobalStyle = createGlobalStyle`
   ${normalize}
 
   * {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    
   }
 
   .navbarhidden {

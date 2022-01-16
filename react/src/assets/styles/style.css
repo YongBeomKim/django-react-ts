@@ -1,4 +1,11 @@
 /* https://kyounghwan01.github.io/blog/TS/React/styled-components-preset/ */
 /* @import "~react-image-gallery/styles/scss/image-gallery.scss"; */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap');
-@import "~react-image-gallery/styles/css/image-gallery.css";
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap'); */
+/* @import "~react-image-gallery/styles/css/image-gallery.css"; */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500&display=swap');
+
+/* .import cost {
+  color: #db9a45;
+  color: #9e5b02;
+  color: #d44e40;
+} */

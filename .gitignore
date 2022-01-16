@@ -21,11 +21,10 @@ yarn.lock
 #static/.env
 #static/*.json
 #static/*.js
-static/*.lock
-static/node_modules
-static/src_doto
-staticfiles/**
-static-todo/**
+
+dist
+node_modules
+yarn.lock
 #.editorconfig
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
@@ -67,6 +66,7 @@ MANIFEST
 *.spec
 
 # Installer logs
+logs
 pip-log.txt
 pip-delete-this-directory.txt
 

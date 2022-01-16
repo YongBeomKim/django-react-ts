@@ -1,36 +1,48 @@
-""" 'django-admin startproject' using Django 3.2.10.
-https://docs.djangoproject.com/en/3.2/topics/settings/
-https://docs.djangoproject.com/en/3.2/ref/settings/"""
-
-
-FILE_SQL = "db.sqlite3"
+# Enviorment Setting
+FILE_SQL3 = "db.sqlite3"
 FILE_SETTING = 'settings.ini'
+MEDIA_FOLDER = "../media"
+REACT_FOLDER = "../react"
+REACT_DEV_URL = "http://localhost:3000/"
+REACT_HOST_URL = "/static/dist/"
+SHELL_PLUS = 'ipython'
+
+
+# https://docs.djangoproject.com/en/dev/releases/4.0/#format-change
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1']
+CORS_ALLOW_CREDENTIALS = True
+ALLOWED_HOSTS = [
+    "0.0.0.0",
+    "127.0.0.1",
+]
+CORS_ORIGIN_WHITELIST = [
+    'http://0.0.0.0:8000',
+    'http://127.0.0.1:8000',
+    'http://localhost:3000',
+]
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# https://docs.python.org/ko/3/library/configparser.html
 import configparser
 from pathlib import Path
-from datetime import timedelta
 BASE_DIR = Path(__file__).resolve().parent.parent
+CONFIG = configparser.ConfigParser(interpolation=None)
+CONFIG.read(BASE_DIR / FILE_SETTING)
 
 
-# Setting Params from `settings.ini`
-config = configparser.ConfigParser(interpolation=None)
-config.read(BASE_DIR / FILE_SETTING)
-
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# Database : Quick-start development settings
+# https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
+# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+SECRET_KEY = CONFIG['DJANGO']['secret_key']
 PSQL_KEY = 'PSQL'
-SECRET_KEY = config['DJANGO']['secret_key']
 DB_HOSTS = {
-    'sqlite3': {
+    'SQLITE3': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / FILE_SQL,
+        'NAME': BASE_DIR / FILE_SQL3,
     },
-    "psql":{
-        key.upper(): config[PSQL_KEY][key]  
-        for key in config[PSQL_KEY]
+    PSQL_KEY: {
+        KEY.upper() : CONFIG[PSQL_KEY][KEY]
+        for KEY in CONFIG[PSQL_KEY]
     },
 }
 
@@ -42,36 +54,33 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    "server.staticfiles",  # Customized Static
-    "django_extensions",
-    'corsheaders'
-]
 
+    # Customized Static Collection
+    # 'django.contrib.staticfiles',
+    'server.staticfiles',
+    'django_extensions',
+    'corsheaders',
+    'channels',
+
+    # Celery
+    'django_celery_results',
+    'django_celery_beat',
+]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-# CORS_ORIGIN_ALLOW_ALL = True 
-CORS_ORIGIN_WHITELIST = [
-    'http://3.34.63.174:8000',
-    'http://localhost:3000',
-    'https://localhost:8000',
-    'http://127.0.0.1:8000',
-    'http://0.0.0.0:8000',
-]
-CORS_ALLOW_CREDENTIALS = True
-
 
 ROOT_URLCONF = 'server.urls'
-
+ASGI_APPLICATION = 'server.asgi.application'
+WSGI_APPLICATION = 'server.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/topics/templates/#module-django.template.backends.django
 TEMPLATES = [
     {
@@ -94,8 +103,7 @@ TEMPLATES = [
 
 
 # Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
-WSGI_APPLICATION = 'server.wsgi.application'
+# https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
@@ -105,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
+# https://docs.djangoproject.com/en/4.0/topics/i18n/
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Seoul'
 USE_I18N = True
@@ -114,35 +122,47 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
+# https://docs.djangoproject.com/en/4.0/howto/static-files/
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR.joinpath(MEDIA_FOLDER)
+
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    (BASE_DIR.joinpath("../react")),
+    (BASE_DIR.joinpath(REACT_FOLDER)),
 ]
 STATIC_ROOT = BASE_DIR.joinpath("staticfiles")
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR.joinpath("../media")
-
-
 # Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 # Celery Configuration Options
 # https://docs.celeryproject.org/en/stable/userguide/configuration.html#std-setting-result_backend
+# CELERY_BROKER_URL = "amqp://rabbit:celerydj@localhost:5672/rabbithost"
+# CELERY_TASK_TRACK_STARTED = True
 CELERY_TIMEZONE = "Asia/Seoul"
 CELERY_BROKER_URL = 'redis://localhost:6379'
-# CELERY_BROKER_URL = "amqp://rabbit:celerydj@localhost:5672/rabbithost"
-# CELERY_RESULT_BACKEND = 'rpc://localhost'
-# CELERY_TASK_TRACK_STARTED = True
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
 
-# Issues with mysql
+
+# Issues with MYSQL
 # https://github.com/celery/django-celery-results
-DJANGO_CELERY_RESULTS_TASK_ID_MAX_LENGTH=191
+DJANGO_CELERY_RESULTS_TASK_ID_MAX_LENGTH = 191
+
 
 # Configure Celery to use the django-celery-results backend.
 # https://docs.celeryproject.org/en/latest/django/first-steps-with-django.html#django-celery-results-using-the-django-orm-cache-as-a-result-backend
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_CACHE_BACKEND = 'django-cache'
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'my_cache_table',
+    }
+}

@@ -1,38 +1,33 @@
 from .base import *
 from .logger import *
 
-# SECURITY WARNING: keep the secret key used in production secret!
-DEBUG = True
-ALLOWED_HOSTS = [
-    "0.0.0.0",
-    "127.0.0.1",
-]
-
-# https://stackoverflow.com/questions/38841109/csrf-validation-does-not-work-on-django-using-https
-# https://docs.djangoproject.com/en/dev/releases/4.0/#format-change
-# CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0']
-FOLDER_NAME = "../media"
-DATABASES = {
-    "default": DB_HOSTS['sqlite3'], # psql
-}
-
-# Enviorment texts (DEBUG / boolean)
-REACT_DEV_URL = "http://localhost:3000/"
-REACT_HOST_URL = "/static/dist/"
 
 # Application definition
-# INSTALLED_APPS += [
-# ]
+INSTALLED_APPS += [
+    'api',
+]
 
-# https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
+
+DEBUG = True
+# DATABASES_NAME = 'PSQL'
+DATABASES_NAME = 'SQLITE3'
+DATABASES = {"default": DB_HOSTS[DATABASES_NAME],}
+
+
 # https://dzone.com/articles/how-to-fix-django-cors-error
+# https://channels.readthedocs.io/en/stable/topics/channel_layers.html
+# https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
 if DEBUG:
-
     INSTALLED_APPS += ['debug_toolbar']
     MIDDLEWARE += [
         'debug_toolbar.middleware.DebugToolbarMiddleware'
     ]
-
     ALLOWED_HOSTS=['*']
-    CORS_ORIGIN_ALLOW_ALL = True
     INTERNAL_IPS = "127.0.0.1"
+    CORS_ORIGIN_ALLOW_ALL = True
+    
+    CHANNEL_LAYERS = {
+        "default": {
+            "BACKEND": "channels.layers.InMemoryChannelLayer"
+        }
+    }

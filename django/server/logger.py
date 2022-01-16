@@ -1,7 +1,12 @@
 # https://hikoding.tistory.com/49
+# https://docs.djangoproject.com/en/4.0/topics/logging/#loggers
 # DEBUG (디버깅) INFO(정보) WARNING (마이너) 
 # ERROR (오류) CRITICAL (문제발생)
-from .base import BASE_DIR
+LOG_FOLDER = "../logs/"
+
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 LOGGING = {
     'version': 1,
@@ -45,8 +50,8 @@ LOGGING = {
             'encoding': 'utf-8',
             'filters': ['require_debug_false'],
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': BASE_DIR / 'logs/mysite.log',
-            'maxBytes': 1024*1024*5,  # 5 MB
+            'filename': BASE_DIR.joinpath(LOG_FOLDER + 'django.log'),
+            'maxBytes': 1024*1024*1,  # 5 MB
             'backupCount': 5,         # 최대 파일갯수
             'formatter': 'standard',
         },

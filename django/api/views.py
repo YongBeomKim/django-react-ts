@@ -1,7 +1,6 @@
-import json
-from django.views import View
-from django.http import JsonResponse
+from django.shortcuts import render
 from django.views.generic import TemplateView
+# Create your views here.
 
 
 class Index(TemplateView):
