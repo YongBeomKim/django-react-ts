@@ -4,6 +4,7 @@
 
 ### Django ###
 settings.ini
+**/settings.ini
 *.log
 *.pot
 *.pyc
